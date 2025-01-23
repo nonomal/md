@@ -1,25 +1,25 @@
+<script setup lang="ts">
+import CodemirrorEditor from '@/views/CodemirrorEditor.vue'
+</script>
+
 <template>
-  <div id="app">
-    <router-view></router-view>
-  </div>
+  <CodemirrorEditor />
 </template>
 
 <style lang="less">
-// 仿 uniapp 外层全屏
 html,
 body,
 #app {
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   padding: 0;
-  height: 100%;
-  width: 100%;
 }
-</style>
 
-<style lang="less">
-/* 每个页面公共css */
-@import url('./assets/less/style-mirror.css');
-@import url('./assets/less/theme.less');
+// 抵消下拉菜单开启时带来的样式
+body {
+  pointer-events: initial !important;
+}
 
 ::-webkit-scrollbar {
   width: 6px;
@@ -52,7 +52,9 @@ body,
 
   color: #333333;
   background-color: #ffffff;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12), 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.12),
+    0 2px 4px 0 rgba(0, 0, 0, 0.08);
 }
 
 .CodeMirror-hint {
